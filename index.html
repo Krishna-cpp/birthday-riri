@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hbd rhea 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =====================================================
+       SCATTERED STICKER LAYER (fixed, decorative chaos)
+  ====================================================== -->
+
+  <!-- side-1: Sony camera — top left corner -->
+  <img class="sc sc-camera"    src="assets/stickers/side-1.png" alt="">
+
+  <!-- side-2: Cat strawberry — left mid -->
+  <img class="sc sc-cat"       src="assets/stickers/side-2.png" alt="">
+
+  <!-- side-3: Pixel cake — bottom left -->
+  <img class="sc sc-pixelcake" src="assets/stickers/side-3.png" alt="">
+
+  <!-- side-4: Kanye bear — top right -->
+  <img class="sc sc-bear"      src="assets/stickers/side-4.png" alt="">
+
+  <!-- side-5: Smiley face — right mid-high -->
+  <img class="sc sc-smiley"    src="assets/stickers/side-5.png" alt="">
+
+  <!-- side-6: Pink blob — right mid-low -->
+  <img class="sc sc-blob"      src="assets/stickers/side-6.png" alt="">
+  <img class="sc sc-krish"      src="assets/stickers/side-7.png" alt="">
+    <img class="sc sc-star"      src="assets/stickers/side-8.png" alt="">
+    <img class="sc sc-spidey"      src="assets/stickers/side-9.png" alt="">
+    <img class="sc sc-pig"      src="assets/stickers/side-10.png" alt="">
+    <img class="sc sc-catto"      src="assets/stickers/side-11.png" alt="">
+    <img class="sc sc-cool"      src="assets/stickers/side-12.png" alt="">
+    <img class="sc sc-flower"      src="assets/stickers/side-13.png" alt="">
+    <img class="sc sc-colour"      src="assets/stickers/side-14.png" alt="">
+  <!-- birthday snoopy — bottom right -->
+  <img class="sc sc-snoopy"    src="assets/stickers/birthday.png" alt="">
+
+  <!-- tape strips -->
+  <div class="tape tape-tl"></div>
+  <div class="tape tape-tr"></div>
+  <div class="tape tape-mid-l"></div>
+
+  <!-- =====================================================
+       MAIN PAGE
+  ====================================================== -->
+  <div class="page" id="page">
+
+    <!-- eyebrow -->
+    <h1 class="eyebrow">HIEEEEEEEEEEEEE</h1>
+
+    <!-- RHEA NAME — hero sticker, static, proud -->
+    <div class="name-hero">
+      <img src="assets/stickers/rhea-name.png" alt="Rhea!" class="name-img">
+    </div>
+
+    <!-- subtitle -->
+    <p class="subtitle-note">
+      you're turning <span class="age-tag">20</span> 
+      and that's actually insane
+    </p>
+
+    <!-- squiggle -->
+    <div class="squiggle" aria-hidden="true">
+      <svg viewBox="0 0 300 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 7 C30 0,60 14,90 7 S150 0,180 7 S240 14,270 7 S300 0,300 7"
+              stroke="#ffb3cc" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <!-- CAKE + CANDLES section -->
+    <div class="cake-section">
+      <!-- clickable number candles -->
+      <div class="candles-row">
+        <img class="candle" id="candle-2" src="assets/stickers/2.png"  alt="2" title="click me!">
+        <img class="candle" id="candle-0" src="assets/stickers/0.png"  alt="0" title="click me!">
+      </div>
+      <!-- cake below -->
+      <img class="cake-img" src="assets/stickers/cake.png" alt="cake">
+      <p class="cake-hint">↑ click the candles</p>
+    </div>
+
+    <!-- squiggle 2 -->
+    <div class="squiggle" aria-hidden="true">
+      <svg viewBox="0 0 300 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 7 C30 0,60 14,90 7 S150 0,180 7 S240 14,270 7 S300 0,300 7"
+              stroke="#ffb3cc" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <!-- INTERACTION ZONE -->
+    <section class="interaction-zone">
+
+      <!-- photo placeholder -->
+      <div class="photo-placeholder" id="photo-placeholder">
+        <span class="ph-emoji">📸</span>
+        <p class="ph-hint">there's a photo here<br><em>(don't click that button)</em></p>
+      </div>
+
+      <!-- revealed photo -->
+      <div class="photo-wrap hidden" id="photo-wrap">
+        <img src="assets/stickers/photo-2.png" alt="us" class="reveal-photo">
+        <p class="photo-cap">ARE WE GOATED OR ARE WE GOATED!!!??!</p>
+      </div>
+
+      <!-- THE button -->
+      <div class="btn-area">
+        <button class="dont-btn" id="dont-btn">
+          <span>🤭</span>
+          <span id="dont-label">don't click this</span>
+        </button>
+        <p class="btn-sub" id="btn-sub">seriously. don't.</p>
+      </div>
+
+    </section>
+
+    <!-- MESSAGE CARD (hidden) -->
+    <section class="msg-card hidden" id="msg-card">
+      <div class="card-tape"></div>
+      <img class="card-sc card-sc-bear"   src="assets/stickers/side-4.png" alt="">
+      <img class="card-sc card-sc-smiley" src="assets/stickers/side-5.png" alt="">
+
+      <p class="card-hi">HIEEEEE 🤍</p>
+      <div class="card-body">
+        <p>happy birthday RHEA!! 20 already??? that's actually insane unc wow</p>
+        <p>i still can't believe we're friends, no way i would've thought we'd be best friends at the start of the year</p>
+        <p>also i'm expecting some brownies for this website 👀</p>
+        <p>and yeah... fine go talk to him only XD</p>
+        <p>we're gonna get crazy placements this year TRUST we'll lock in. and then you'll take me to cake fudge at corner house</p>
+        <p>you're one of the few people i can actually be myself around. i hate my voice so much that i don't do phone calls with anyone that much but i like talking to you so much that we talk for hours about literally anything</p>
+        <p>ITS SOO FUN don't change EVER 🤍</p>
+      </div>
+      <p class="card-sign">— krishna (made this instead of studying)</p>
+    </section>
+
+    <!-- easter egg -->
+    <p class="easter-hint" id="easter-hint">👀</p>
+
+    <p class="made-by">made by krishna 🤍</p>
+
+  </div>
+
+  <!-- toast -->
+  <div class="toast hidden" id="toast">brownies pls 👀</div>
+
+  <script src="script.js"></script>
+  <audio id="bg-music" src="assets/background-music.mp3" loop></audio>
+
+<button id="music-btn" class="music-btn">🎧 play this rq</button>
+</body>
+</html>
