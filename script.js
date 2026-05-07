@@ -135,17 +135,19 @@ function burstConfetti() {
   /* ── MUSIC TOGGLE ── */
   const music = document.getElementById("bg-music");
   const musicBtn = document.getElementById("music-btn");
+  const musicText = musicBtn?.querySelector(".music-text");
+  const musicIcon = musicBtn?.querySelector(".music-icon");
 
   let playing = false;
 
   musicBtn?.addEventListener("click", () => {
     if (!playing) {
       music.play();
-      musicBtn.textContent = "⏸ ok pause this";
+      musicText.textContent = "pause this";
       playing = true;
     } else {
       music.pause();
-      musicBtn.textContent = "🎧 play this rq";
+      musicText.textContent = "play this rq";
       playing = false;
     }
   });
