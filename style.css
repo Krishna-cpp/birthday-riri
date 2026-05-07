@@ -38,24 +38,39 @@ body {
 }
 
 /* ============================
+   STICKER WRAPPER
+   Container for all scattered stickers
+============================ */
+.sticker-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* ============================
    SCATTERED STICKER LAYER
-   Fixed position, outside the page card.
+   Now positioned absolutely within wrapper.
    mix-blend-mode: multiply erases black bgs.
    Each one has unique position + rotation + float delay.
 ============================ */
 .sc {
-  position: fixed;
+  position: absolute;
   pointer-events: none;
   mix-blend-mode: multiply;
   z-index: 2;
   animation: sc-float 5s ease-in-out infinite;
 }
 
-/* ── positions ── */
+/* ── original positions (viewport-relative, converted to %) ── */
 
 .sc-camera {
-  top: 14px;
-  left: 8px;
+  top: 2%;
+  left: 1%;
   width: 190px;
   transform: rotate(-14deg);
   animation-delay: 0s;
@@ -64,7 +79,7 @@ body {
 
 .sc-cat {
   top: 36%;
-  left: -12px;
+  left: -1%;
   width: 180px;
   transform: rotate(9deg);
   animation-delay: 0.6s;
@@ -72,8 +87,8 @@ body {
 }
 
 .sc-pixelcake {
-  bottom: 90px;
-  left: 8px;
+  bottom: 5%;
+  left: 1%;
   width: 140px;
   transform: rotate(-18deg);
   animation-delay: 1.2s;
@@ -81,8 +96,8 @@ body {
 }
 
 .sc-bear {
-  top: 6px;
-  right: 4px;
+  top: 1%;
+  right: 1%;
   width: 185px;
   transform: rotate(12deg);
   animation-delay: 0.3s;
@@ -91,7 +106,7 @@ body {
 
 .sc-smiley {
   top: 28%;
-  right: -8px;
+  right: -2%;
   width: 170px;
   transform: rotate(-8deg);
   animation-delay: 0.9s;
@@ -100,7 +115,7 @@ body {
 
 .sc-blob {
   top: 58%;
-  right: 2px;
+  right: 0.5%;
   width: 155px;
   transform: rotate(6deg);
   animation-delay: 1.5s;
@@ -108,12 +123,78 @@ body {
 }
 
 .sc-snoopy {
-  bottom: 50px;
-  right: -4px;
+  bottom: 3%;
+  right: -1%;
   width: 210px;
   transform: rotate(-6deg);
   animation-delay: 0.4s;
   animation-duration: 5.6s;
+}
+
+/* ── new stickers with responsive positioning ── */
+
+.sc-krish {
+  top: 20%;
+  left: 12%;
+  width: 150px;
+  transform: rotate(-10deg);
+  animation-delay: 0.8s;
+}
+
+.sc-star {
+  top: 15%;
+  right: 12%;
+  width: 300px;
+  transform: rotate(-10deg);
+  animation-delay: 0.8s;
+}
+
+.sc-spidey {
+  top: 55%;
+  left: 0.5%;
+  width: 225px;
+  transform: rotate(-10deg);
+  animation-delay: 0.8s;
+}
+
+.sc-pig {
+  top: 55%;
+  right: 12%;
+  width: 225px;
+  transform: rotate(-10deg);
+  animation-delay: 0.8s;
+}
+
+.sc-catto {
+  top: 65%;
+  left: 20%;
+  width: 300px;
+  transform: rotate(-10deg);
+  animation-delay: 0.8s;
+}
+
+.sc-cool {
+  top: 10%;
+  left: 25%;
+  width: 300px;
+  transform: rotate(-10deg);
+  animation-delay: 0.8s;
+}
+
+.sc-flower {
+  top: 12%;
+  right: 35%;
+  width: 300px;
+  transform: rotate(-10deg);
+  animation-delay: 0.8s;
+}
+
+.sc-colour {
+  top: 50%;
+  right: 28%;
+  width: 300px;
+  transform: rotate(-10deg);
+  animation-delay: 0.8s;
 }
 
 @keyframes sc-float {
@@ -171,8 +252,8 @@ body {
 
 /* ============================
    RHea NAME — HERO
-   Big, static, proud. Not floating, not tilted.
-   Centered with a soft underline shadow behind it.
+    Big, static, proud. Not floating, not tilted.
+    Centered with a soft underline shadow behind it.
 ============================ */
 .name-hero {
   text-align: center;
@@ -499,133 +580,15 @@ body {
 }
 
 /* ============================
-   RESPONSIVE
+   CONFETTI
 ============================ */
-@media (max-width: 700px) {
-  .sc-camera    { width:120px; top:10px;    left:0px; }
-  .sc-cat       { width:115px; top:36%;    left:-8px; }
-  .sc-pixelcake { width:90px;  bottom:80px; left:2px; }
-  .sc-bear      { width:120px; top:6px;    right:0px; }
-  .sc-smiley    { width:200px; top:28%;    right:-6px; }
-  .sc-blob      { width:400px; top:58%;    right:0px; }
-  .sc-snoopy    { width:135px; bottom:50px; right:-4px; }
-
-  .tape-mid-l   { display:none; }
-  .tape-tl      { left:24px; }
-  .tape-tr      { right:22px; }
-
-  body  { padding:20px 12px 80px; }
-  .page { padding:32px 20px 44px; }
-  .card-body { font-size:19px; }
-  .dont-btn  { font-size:15px; padding:12px 20px; }
-}
-
-@media (max-width: 400px) {
-  /* on tiny screens hide a couple stickers to prevent overlap */
-  .sc-pixelcake, .sc-blob { display:none; }
-  .name-img { max-width:100%; }
-}
-#music-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-
-  z-index: 999999;
-
-  background: #ff85a1;
-  color: white;
-
-  padding: 12px 18px;
-  font-size: 15px;
-  font-weight: 700;
-  font-family: var(--font-sans);
-
-  border: none;
-  border-radius: 999px;
-
-  cursor: pointer;
-
-  box-shadow: 0 4px 0 #e8607a, 0 6px 16px rgba(232,96,122,0.25);
-
-  transition: all 0.2s ease;
-}
-
-#music-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 0 #e8607a, 0 10px 20px rgba(232,96,122,0.3);
-}
-
-#music-btn:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 0 #e8607a;
-}
-
-.sc-krish {
-  top: 20%;
-  left: 150px;
-  width: 150px;
-  transform: rotate(-10deg);
-  animation-delay: 0.8s;
-}
-
-.sc-star {
-  top: 20%;
-  right: 150px;
-  width: 300px;
-  transform: rotate(-10deg);
-  animation-delay: 0.8s;
-}
-.sc-spidey {
-  top: 55%;
-  left: 5px;
-  width: 225px;
-  transform: rotate(-10deg);
-  animation-delay: 0.8s;
-}
-.sc-pig {
-  top: 55%;
-  right: 150px;
-  width: 225px;
-  transform: rotate(-10deg);
-  animation-delay: 0.8s;
-}
-.sc-catto {
-  top: 65%;
-  left: 250px;
-  width: 300px;
-  transform: rotate(-10deg);
-  animation-delay: 0.8s;
-}
-.sc-cool {
-  top: 15%;
-  left: 300px;
-  width: 300px;
-  transform: rotate(-10deg);
-  animation-delay: 0.8s;
-}
-.sc-flower {
-  top: 15%;
-  right: 400px;
-  width: 300px;
-  transform: rotate(-10deg);
-  animation-delay: 0.8s;
-}
-.sc-colour {
-  top: 50%;
-  right: 350px;
-  width: 300px;
-  transform: rotate(-10deg);
-  animation-delay: 0.8s;
-}
 .confetti {
   position: fixed;
   width: 10px;
   height: 14px;
   border-radius: 3px;
-
   pointer-events: none;
   z-index: 9999;
-
   animation: burst 1.5s ease-out forwards;
 }
 
@@ -638,4 +601,163 @@ body {
     transform: translate(var(--x), var(--y)) rotate(720deg);
     opacity: 0;
   }
+}
+
+/* ============================
+   MUSIC BUTTON - REDESIGNED
+   Now prettier, smoother, and stands out!
+============================ */
+.music-btn-float {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999999;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  background: linear-gradient(135deg, #ff6e8d 0%, #ff85a1 50%, #ffb3cc 100%);
+  color: white;
+  
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  
+  border: 2px solid #fff;
+  border-radius: 50px;
+  
+  cursor: pointer;
+  box-shadow: 
+    0 0 0 4px rgba(255, 133, 161, 0.2),
+    0 8px 24px rgba(232, 96, 122, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: music-pulse 2s ease-in-out infinite;
+}
+
+.music-icon {
+  font-size: 22px;
+  display: inline-block;
+  animation: music-bounce 1.4s ease-in-out infinite;
+}
+
+.music-text {
+  letter-spacing: 0.5px;
+}
+
+.music-btn-float:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 
+    0 0 0 6px rgba(255, 133, 161, 0.3),
+    0 12px 32px rgba(232, 96, 122, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, #ff5577 0%, #ff7a95 50%, #ffb3cc 100%);
+}
+
+.music-btn-float:active {
+  transform: translateY(-2px) scale(0.98);
+  box-shadow: 
+    0 0 0 2px rgba(255, 133, 161, 0.2),
+    0 4px 12px rgba(232, 96, 122, 0.25),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes music-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 0 4px rgba(255, 133, 161, 0.2),
+      0 8px 24px rgba(232, 96, 122, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 0 8px rgba(255, 133, 161, 0.15),
+      0 8px 28px rgba(232, 96, 122, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes music-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.music-btn-float.playing {
+  animation: music-pulse-active 0.8s ease-in-out infinite;
+}
+
+@keyframes music-pulse-active {
+  0%, 100% {
+    box-shadow: 
+      0 0 0 4px rgba(255, 133, 161, 0.3),
+      0 8px 24px rgba(232, 96, 122, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 0 10px rgba(255, 133, 161, 0.1),
+      0 8px 28px rgba(232, 96, 122, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 700px) {
+  .sc-camera    { width:120px; top:5%;    left:0%; }
+  .sc-cat       { width:115px; top:36%;    left:-1%; }
+  .sc-pixelcake { width:90px;  bottom:5%; left:1%; }
+  .sc-bear      { width:120px; top:3%;    right:0%; }
+  .sc-smiley    { width:120px; top:28%;    right:-2%; }
+  .sc-blob      { width:120px; top:58%;    right:0%; }
+  .sc-snoopy    { width:135px; bottom:3%; right:-1%; }
+  
+  /* Hide overlapping stickers on mobile */
+  .sc-star, .sc-cool, .sc-flower, .sc-colour { display: none; }
+  .sc-krish { width: 100px; left: 8%; }
+  .sc-spidey { width: 150px; }
+  .sc-pig { width: 150px; right: 8%; }
+  .sc-catto { width: 180px; left: 15%; }
+
+  .tape-mid-l   { display:none; }
+  .tape-tl      { left:24px; }
+  .tape-tr      { right:22px; }
+
+  body  { padding:20px 12px 80px; }
+  .page { padding:32px 20px 44px; }
+  .card-body { font-size:19px; }
+  .dont-btn  { font-size:15px; padding:12px 20px; }
+  
+  .music-btn-float {
+    top: 12px;
+    right: 12px;
+    padding: 12px 16px;
+    font-size: 14px;
+    gap: 6px;
+  }
+  
+  .music-icon { font-size: 18px; }
+}
+
+@media (max-width: 400px) {
+  /* on tiny screens hide a couple stickers to prevent overlap */
+  .sc-pixelcake, .sc-blob, .sc-star, .sc-cool, .sc-flower, .sc-colour, .sc-catto { display:none; }
+  .name-img { max-width:100%; }
+  
+  .music-btn-float {
+    padding: 10px 12px;
+    font-size: 12px;
+    gap: 4px;
+  }
+  
+  .music-icon { font-size: 16px; }
+  .music-text { display: none; }
 }
